@@ -612,7 +612,7 @@ h4,
   }
 
   .nav-socials {
-    gap: 0.8rem;
+    gap: 1.2rem;
   }
 
   .nav-socials .social-icon {
@@ -627,7 +627,7 @@ h4,
 
 @media (max-width: 480px) {
   .nav-socials {
-    gap: 0.5rem;
+    gap: 1rem;
   }
 
   .logo a {
