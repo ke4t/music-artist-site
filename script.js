@@ -455,7 +455,15 @@ document.addEventListener('DOMContentLoaded', () => {
                     setTimeout(() => {
                         // Scroll while screen is covered
                         const navbarHeight = 80;
-                        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - (navbarHeight - 20);
+                        const isMobile = window.innerWidth <= 768;
+                        let offset = navbarHeight - 20;
+
+                        // On mobile, if targeting music, scroll deeper to hit the tracklist
+                        if (isMobile && targetId === 'music') {
+                            offset = -100; // Scroll past the section header and art
+                        }
+
+                        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - offset;
 
                         window.scrollTo({
                             top: targetPosition,
