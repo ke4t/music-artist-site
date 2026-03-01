@@ -180,6 +180,22 @@ ul {
 }
 
 @media (max-width: 768px) {
+  .section-padding {
+    padding: 60px 0;
+  }
+
+  .marquee-container {
+    margin-top: 3rem;
+  }
+
+  .visuals-section {
+    padding: 2rem 0;
+  }
+
+  .site-footer {
+    padding-top: 3rem;
+    padding-bottom: 60px;
+  }
 
   .cursor-dot,
   .cursor-outline {
