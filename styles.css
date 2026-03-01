@@ -237,6 +237,12 @@ ul {
   }
 }
 
+.typing-dots {
+  color: #f1c338;
+  -webkit-text-fill-color: #f1c338;
+  /* Override the parent's transparent fill */
+}
+
 .typing-dots::after {
   content: '';
   animation: typing-dots 2.04s infinite;
