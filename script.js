@@ -496,4 +496,34 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Special Smooth Scroll for LISTEN NOW Button (No Transition)
+    const heroListenBtn = document.querySelector('.hero-listen-btn');
+    if (heroListenBtn) {
+        heroListenBtn.addEventListener('click', (e) => {
+            const href = heroListenBtn.getAttribute('href');
+            if (href && href.startsWith('#')) {
+                e.preventDefault();
+                const targetId = href.substring(1);
+                const targetElement = document.getElementById(targetId);
+
+                if (targetElement) {
+                    const navbarHeight = 80;
+                    const isMobile = window.innerWidth <= 768;
+                    let offset = navbarHeight - 20;
+
+                    if (isMobile && targetId === 'music') {
+                        offset = -100; // Same mobile offset deep-scroll
+                    }
+
+                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - offset;
+
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        });
+    }
+
 });
