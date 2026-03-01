@@ -1,5 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Force scroll to top on refresh
+    if (history.scrollRestoration) {
+        history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
 
+    // Initial check for mobile menu
     /*=====================================================
       PRELOADER
     =====================================================*/
