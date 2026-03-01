@@ -444,7 +444,7 @@ document.addEventListener('DOMContentLoaded', () => {
       NAVIGATION TRANSITION LOGIC
     =====================================================*/
     const transitionLayer = document.getElementById('navigation-transition');
-    const navLinks = document.querySelectorAll('.nav-links a, .mobile-link, .logo a, .hero-listen-btn');
+    const navLinks = document.querySelectorAll('.nav-links a, .mobile-link, .logo a');
 
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
