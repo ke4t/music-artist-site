@@ -226,6 +226,7 @@ ul {
       var(--text-muted) 80%);
   background-size: 200% auto;
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: shine 3s linear infinite;
 }
@@ -238,7 +239,7 @@ ul {
 
 .typing-dots::after {
   content: '';
-  animation: typing-dots 1.5s infinite;
+  animation: typing-dots 3s infinite;
 }
 
 @keyframes typing-dots {
