@@ -612,11 +612,7 @@ h4,
   }
 
   .nav-socials {
-    gap: 1.2rem;
-  }
-
-  .nav-socials .social-icon {
-    font-size: 1rem;
+    display: none;
   }
 
   .menu-toggle {
@@ -633,6 +629,13 @@ h4,
   .logo a {
     font-size: 1.5rem;
   }
+}
+
+.mobile-socials {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 2rem;
 }
 
 .mobile-socials a {
