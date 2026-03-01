@@ -181,20 +181,25 @@ ul {
 
 @media (max-width: 768px) {
   .section-padding {
-    padding: 60px 0;
+    padding: 0 0 60px 0;
+    /* Removed top padding (2 rows of dots) */
   }
 
   .marquee-container {
-    margin-top: 3rem;
+    margin-top: 2rem;
   }
 
   .visuals-section {
-    padding: 2rem 0;
+    padding: 1rem 0;
+    /* Tighter gallery spacing */
   }
 
   .site-footer {
-    padding-top: 3rem;
+    padding-top: 2rem;
+    /* Reduced from 3rem */
     padding-bottom: 60px;
+    margin-top: -10px;
+    /* Subtle pull to close gap to gallery */
   }
 
   .cursor-dot,
