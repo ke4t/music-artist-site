@@ -434,4 +434,52 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    /*=====================================================
+      NAVIGATION TRANSITION LOGIC
+    =====================================================*/
+    const transitionLayer = document.getElementById('navigation-transition');
+    const navLinks = document.querySelectorAll('.nav-links a, .mobile-link, .logo a, .hero-listen-btn');
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            const href = link.getAttribute('href');
+            if (href && href.startsWith('#')) {
+                e.preventDefault();
+                const targetId = href.substring(1);
+                const targetElement = document.getElementById(targetId);
+
+                if (targetElement) {
+                    // Trigger Transition In
+                    transitionLayer.classList.add('active');
+
+                    setTimeout(() => {
+                        // Scroll while screen is covered
+                        const navbarHeight = 80;
+                        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - (navbarHeight - 20);
+
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'auto' // Instant scroll while covered
+                        });
+
+                        // Close mobile menu if open
+                        if (menuToggle && menuToggle.classList.contains('open')) {
+                            menuToggle.classList.remove('open');
+                            mobileMenu.classList.remove('open');
+                            document.body.style.overflow = '';
+                        }
+
+                        // Trigger Transition Out
+                        setTimeout(() => {
+                            transitionLayer.classList.add('exit');
+                            setTimeout(() => {
+                                transitionLayer.classList.remove('active', 'exit');
+                            }, 800);
+                        }, 200);
+                    }, 600); // Wait for logo to expand
+                }
+            }
+        });
+    });
+
 });
