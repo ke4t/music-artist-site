@@ -607,16 +607,43 @@ h4,
 }
 
 @media (max-width: 900px) {
-
-  .nav-links,
-  .nav-socials {
+  .nav-links {
     display: none;
+  }
+
+  .nav-socials {
+    gap: 0.8rem;
+  }
+
+  .nav-socials .social-icon {
+    font-size: 1rem;
   }
 
   .menu-toggle {
     display: block;
     cursor: pointer;
   }
+}
+
+@media (max-width: 480px) {
+  .nav-socials {
+    gap: 0.5rem;
+  }
+
+  .logo a {
+    font-size: 1.5rem;
+  }
+}
+
+.mobile-socials a {
+  font-size: 1.8rem;
+  color: var(--text-muted);
+  transition: color var(--transition-fast), transform var(--transition-fast);
+}
+
+.mobile-socials a:hover {
+  color: var(--accent);
+  transform: translateY(-3px);
 }
 
 /*=============================================
