@@ -1647,8 +1647,8 @@ h4,
 }
 
 .transition-logo {
-  width: 400px;
-  /* High base size to preserve resolution */
+  width: 340px;
+  /* Reduced from 400px (15% smaller) */
   height: auto;
   transform: scale(0.2);
   opacity: 0;
