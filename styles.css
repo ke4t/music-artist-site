@@ -239,7 +239,7 @@ ul {
 
 .typing-dots::after {
   content: '';
-  animation: typing-dots 3s infinite;
+  animation: typing-dots 2.55s infinite;
 }
 
 @keyframes typing-dots {
