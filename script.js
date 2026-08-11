@@ -25,7 +25,14 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => {
                 preloader.classList.add('fade-out');
                 // Optional: remove from DOM after fade
-                setTimeout(() => preloader.style.display = 'none', 800);
+                setTimeout(() => {
+                    preloader.style.display = 'none';
+                    // Show discord prompt 1 second after landing on actual site
+                    setTimeout(() => {
+                        const discordPrompt = document.getElementById('discord-prompt');
+                        if (discordPrompt) discordPrompt.classList.add('active');
+                    }, 1000);
+                }, 800);
             }, 500); // short delay at 100%
         }
     }, 200);
@@ -542,4 +549,17 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Discord Prompt Logic
+    const discordPromptClose = document.getElementById('discord-prompt-close');
+    const discordPrompt = document.getElementById('discord-prompt');
+    if (discordPromptClose && discordPrompt) {
+        discordPromptClose.addEventListener('click', () => {
+            discordPrompt.classList.remove('active');
+        });
+        discordPrompt.addEventListener('click', (e) => {
+            if (e.target === discordPrompt) {
+                discordPrompt.classList.remove('active');
+            }
+        });
+    }
 });

@@ -1761,3 +1761,80 @@ h4,
 .single-track-info .track-time {
   color: var(--text-muted);
 }
+
+/*=============================================
+  09. DISCORD PROMPT MODAL
+=============================================*/
+.discord-prompt-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.discord-prompt-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.discord-prompt-box {
+  background-color: #111;
+  border: 1px solid rgba(241, 195, 56, 0.3);
+  padding: 3rem;
+  max-width: 450px;
+  width: 90%;
+  text-align: center;
+  position: relative;
+  transform: translateY(20px) scale(0.95);
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.discord-prompt-overlay.active .discord-prompt-box {
+  transform: translateY(0) scale(1);
+}
+
+.discord-prompt-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-size: 1.2rem;
+  cursor: none;
+  transition: color var(--transition-fast);
+}
+
+.discord-prompt-close:hover {
+  color: var(--color-white);
+}
+
+.discord-prompt-icon {
+  font-size: 4rem;
+  color: #5865F2;
+  margin-bottom: 1.5rem;
+}
+
+.discord-prompt-content h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--text-main);
+}
+
+.discord-prompt-content p {
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+}
