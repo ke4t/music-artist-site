@@ -118,7 +118,7 @@ ul {
   left: 0;
   transform: translate(-50%, -50%);
   pointer-events: none;
-  z-index: 9999;
+  z-index: 10002;
   transition: width 0.2s, height 0.2s, background-color 0.2s;
 }
 
@@ -131,7 +131,7 @@ ul {
   left: 0;
   transform: translate(-50%, -50%);
   pointer-events: none;
-  z-index: 9998;
+  z-index: 10001;
   transition: width 0.2s, height 0.2s, transform 0.1s;
 }
 
